@@ -1,20 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Expense Tracker
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+    <ion-toolbar color="primary">
+      <ion-title size="large">Expense Tracker</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-col>
+      <ion-row>
+        <ion-card-header>
+          <ion-card-title>Add New Expense</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Name of Expense</ion-label>
+            <ion-input id="name" type="text" required [(ngModel)]="name" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input id="amount" type="number" required [(ngModel)]="amount" ></ion-input>
+          </ion-item>
+          <ion-button (click)="clearData()">Clear</ion-button>
+          <ion-button id="addbutton">Add</ion-button>
+        </ion-card-content>
+      </ion-row>
+      <!-- <ion-row>
+        <ion-list>
+        <ion-item *ngFor="let expense of newExpense">
+          <ion-label class="padding">
+           {{ expense.name }}
+           {{ expense.amount }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      </ion-row> -->
+    </ion-col>
+
+  </ion-card>
 </ion-content>
+<script src="home.page.ts"> </script>
