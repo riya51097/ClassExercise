@@ -22,28 +22,32 @@
         <ion-card-content>
           <ion-item>
             <ion-label position="floating">Name of Expense</ion-label>
-            <ion-input id="name" type="text" required [(ngModel)]="name" ></ion-input>
+            <ion-input id="name" type="text" required [(ngModel)]="name"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Amount</ion-label>
-            <ion-input id="amount" type="number" required [(ngModel)]="amount" ></ion-input>
+            <ion-input id="amount" type="text" required [(ngModel)]="amount"></ion-input>
           </ion-item>
-          <ion-button (click)="clearData()">Clear</ion-button>
-          <ion-button id="addbutton">Add</ion-button>
+          <ion-button class="button" (click)="onSave()">Add</ion-button>
         </ion-card-content>
       </ion-row>
-      <!-- <ion-row>
+      <ion-row>
         <ion-list>
-        <ion-item *ngFor="let expense of newExpense">
-          <ion-label class="padding">
-           {{ expense.name }}
-           {{ expense.amount }}
+          <ion-col>
+            <ion-label *ngFor="let name of expenseName"> {{name}}
+            </ion-label>
+            <ion-label *ngFor="let amount of expenseAmount"> {{amount}}</ion-label>
+          </ion-col>
+        </ion-list>
+      </ion-row>
+      <ion-row>
+        <ion-list>
+          <ion-label>Total
           </ion-label>
-        </ion-item>
-      </ion-list>
-      </ion-row> -->
+          <ion-input type="number" required [(ngModel)]="total" disabled="true"></ion-input>
+        </ion-list>
+      </ion-row>
     </ion-col>
-
   </ion-card>
 </ion-content>
 <script src="home.page.ts"> </script>
